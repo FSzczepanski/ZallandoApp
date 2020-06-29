@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initTabbedFragments();
+
+    }
+
+    public void initTabbedFragments(){
         TabLayout tabLayout = findViewById(R.id.tabBar);
         TabItem tabMainPage = findViewById(R.id.navigation_mainPage);
         TabItem tabSearch = findViewById(R.id.navigation_search);
