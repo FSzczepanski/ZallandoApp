@@ -1,4 +1,4 @@
-package com.example.zalandoapp.TabbedFragments;
+package com.example.zalandoapp.ui.TabbedFragments;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.zalandoapp.R;
 
-public class TabBasketFragment extends Fragment {
+public class TabMainPageFragment extends Fragment {
 
-    private TabBasketViewModel mViewModel;
+    private TabMainPageViewModel mViewModel;
 
-    public static TabBasketFragment newInstance() {
-        return new TabBasketFragment();
+    public static TabMainPageFragment newInstance() {
+        return new TabMainPageFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.tab_basket_fragment, container, false);
+        return inflater.inflate(R.layout.tab_main_page_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(TabBasketViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(TabMainPageViewModel.class);
         // TODO: Use the ViewModel
     }
 

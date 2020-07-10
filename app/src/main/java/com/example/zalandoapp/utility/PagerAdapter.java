@@ -1,14 +1,14 @@
-package com.example.zalandoapp;
+package com.example.zalandoapp.utility;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.zalandoapp.TabbedFragments.TabBasketFragment;
-import com.example.zalandoapp.TabbedFragments.TabFavouriteFragment;
-import com.example.zalandoapp.TabbedFragments.TabMainPageFragment;
-import com.example.zalandoapp.TabbedFragments.TabSearchFragment;
+import com.example.zalandoapp.ui.TabbedFragments.TabBasketFragment;
+import com.example.zalandoapp.ui.TabbedFragments.TabFavourites.TabFavouriteFragment;
+import com.example.zalandoapp.ui.TabbedFragments.TabMainPageFragment;
+import com.example.zalandoapp.ui.TabbedFragments.TabSearchFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
     private int numberOfTabs;

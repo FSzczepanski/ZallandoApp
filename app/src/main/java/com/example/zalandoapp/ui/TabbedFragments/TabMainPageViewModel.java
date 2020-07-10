@@ -1,4 +1,4 @@
-package com.example.zalandoapp.TabbedFragments;
+package com.example.zalandoapp.ui.TabbedFragments;
 
 import androidx.lifecycle.ViewModel;
 
