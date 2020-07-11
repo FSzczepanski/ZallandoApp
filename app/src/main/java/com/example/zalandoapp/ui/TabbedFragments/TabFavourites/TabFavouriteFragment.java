@@ -8,6 +8,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +29,7 @@ public class TabFavouriteFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Offer> favouritesList;
     private FavouritesAdapter favouritesAdapter;
+    private NavController navController;
 
     public static TabFavouriteFragment newInstance() {
         return new TabFavouriteFragment();
@@ -48,14 +51,22 @@ public class TabFavouriteFragment extends Fragment {
     }
 
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if(this.navController == null && getView() != null) {
+          //  navController = Navigation.findNavController(getView());
+        }
 
-
+        //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.categoriesFragment, null));
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(TabFavouriteViewModel.class);
         // TODO: Use the ViewModel
+
     }
     private void initList(RecyclerView view) {
         this.recyclerView = view;

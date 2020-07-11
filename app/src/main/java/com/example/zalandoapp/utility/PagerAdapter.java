@@ -24,20 +24,22 @@ public class PagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0:
-                return new TabMainPageFragment();
-            case 1:
-                return new TabSearchFragment();
-            case 2:
-                return new TabFavouriteFragment();
-            case 3:
-                return new TabBasketFragment();
-            default:
-                return null;
+            Fragment fragment = new Fragment();
+            if (position == 0) {
+                fragment = new TabMainPageFragment();
+            } else if(position == 1) {
+                fragment = new TabSearchFragment();
+            }
+            else if(position==2) {
+                fragment = new TabFavouriteFragment();
+            }
+            else if(position==3){
+                fragment = new TabBasketFragment();
+            }
+            return fragment;
 
         }
-    }
+
 
     @Override
     public int getCount() {
