@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.zalandoapp.ui.TabbedFragments.TabBasketFragment;
+import com.example.zalandoapp.ui.TabbedFragments.TabBasket.TabBasketFragment;
 import com.example.zalandoapp.ui.TabbedFragments.TabFavourites.TabFavouriteFragment;
 import com.example.zalandoapp.ui.TabbedFragments.TabMainPageFragment;
 import com.example.zalandoapp.ui.TabbedFragments.TabSearchFragment;

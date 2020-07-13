@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +19,7 @@ import com.example.zalandoapp.R;
 public class TabMainPageFragment extends Fragment {
 
     private TabMainPageViewModel mViewModel;
-
+    private NavController navController;
     public static TabMainPageFragment newInstance() {
         return new TabMainPageFragment();
     }
@@ -26,6 +28,14 @@ public class TabMainPageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.tab_main_page_fragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.categoriesFragment, null));
     }
 
     @Override

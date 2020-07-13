@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,11 +55,8 @@ public class TabFavouriteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if(this.navController == null && getView() != null) {
-          //  navController = Navigation.findNavController(getView());
-        }
 
-        //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.categoriesFragment, null));
+        
     }
 
     @Override
@@ -83,8 +81,8 @@ public class TabFavouriteFragment extends Fragment {
 
     private void fillList(){
         favouritesList = new ArrayList();
-        favouritesList.add(new Offer("1","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport, "dark blue"));
-        favouritesList.add(new Offer("2","Topwoman","Sweater hot cofre",99,R.drawable.sweater, "beige"));
-        favouritesList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue"));
+        favouritesList.add(new Offer("1","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport, "dark blue",1,"L"));
+        favouritesList.add(new Offer("2","Topwoman","Sweater hot cofre",99,R.drawable.sweater, "beige",1,"M"));
+        favouritesList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue",1,"M"));
     }
 }

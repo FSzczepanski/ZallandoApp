@@ -2,45 +2,33 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/navigation_mainPage"
+    app:startDestination="@id/tabMainPageFragment"
     android:id="@+id/mobile_navigation">
 
+
     <fragment
-        android:id="@+id/navigation_mainPage"
+        android:id="@+id/tabBasketFragment"
+        android:name="com.example.zalandoapp.ui.TabbedFragments.TabBasket.TabBasketFragment"
+        android:label="TabBasketFragment"
+        tools:layout="@layout/tab_basket_fragment"/>
+    <fragment
+        android:id="@+id/tabMainPageFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.TabMainPageFragment"
-        android:label="MainPage"
-        tools:layout="@layout/tab_main_page_fragment" />
+        android:label="TabMainPageFragment"
+        tools:layout="@layout/tab_main_page_fragment"/>
     <fragment
-        android:id="@+id/navigation_search"
+        android:id="@+id/offerDetailsFragment"
+        android:name="com.example.zalandoapp.ui.TabbedFragments.offerDetails.OfferDetailsFragment"
+        android:label="offer_details_fragment"
+        tools:layout="@layout/offer_details_fragment" />
+    <fragment
+        android:id="@+id/tabSearchFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.TabSearchFragment"
-        android:label="Search"
+        android:label="tab_search_fragment"
         tools:layout="@layout/tab_search_fragment" />
     <fragment
-        android:id="@+id/navigation_favourite"
+        android:id="@+id/tabFavouriteFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.TabFavourites.TabFavouriteFragment"
-        android:label="Favourite"
-        tools:layout="@layout/tab_favourite_fragment" >
-        <action
-            android:id="@+id/action_tabFavouriteFragment_to_navigation_OfferDetails"
-            app:destination="@id/navigation_OfferDetails"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@+id/tabFavouriteFragment"
-            app:popUpToInclusive="true"/>
-    </fragment>
-    <fragment
-        android:id="@+id/navigation_basket"
-        android:name="com.example.zalandoapp.ui.TabbedFragments.TabBasketFragment"
-        android:label="Basket"
-        tools:layout="@layout/tab_basket_fragment" />
-
-    <fragment
-        android:id="@+id/navigation_OfferDetails"
-        android:name="com.example.zalandoapp.ui.TabbedFragments.offerDetails.OfferDetailsFragment"
-        android:label="OfferDetails"
-        tools:layout="@layout/offer_details_fragment" />
-
-
+        android:label="TabFavouriteFragment"
+        tools:layout="@layout/tab_favourite_fragment"/>
 </navigation>

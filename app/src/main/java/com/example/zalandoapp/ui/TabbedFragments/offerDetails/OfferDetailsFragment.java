@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.zalandoapp.R;
+import com.example.zalandoapp.ui.TabbedFragments.TabBasket.TabBasketViewModel;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -23,6 +26,7 @@ import java.util.Arrays;
 public class OfferDetailsFragment extends Fragment {
 
     private OfferDetailsViewModel mViewModel;
+    private NavController navController;
 
     public static OfferDetailsFragment newInstance() {
         return new OfferDetailsFragment();
@@ -42,7 +46,16 @@ public class OfferDetailsFragment extends Fragment {
         return root;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        NavHostFragment navHostFragment = (NavHostFragment) getChildFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment);
+        navController = navHostFragment.getNavController();
+
+        //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.categoriesFragment, null));
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -11,6 +11,27 @@ public class Offer {
     private String oid;
 
     @NonNull
+    private int amount;
+
+    private String size;
+
+    public void setAmount(int ilosc) {
+        this.amount = ilosc;
+    }
+
+    public void setSize(String wielkosc) {
+        this.size = wielkosc;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    @NonNull
     private String title;
 
     private String description;
@@ -22,13 +43,15 @@ public class Offer {
 
     private String color;
 
-    public Offer(@NonNull String oid, @NonNull String title, String description, int price, int images, String color) {
+    public Offer(@NonNull String oid, @NonNull String title, String description, int price, int images, String color, int amount, String size) {
         this.oid = oid;
         this.title = title;
         this.description = description;
         this.price = price;
         this.images = images;
         this.color = color;
+        this.size=size;
+        this.amount=amount;
     }
 
     @NonNull
