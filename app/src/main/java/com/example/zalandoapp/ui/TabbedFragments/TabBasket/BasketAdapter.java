@@ -1,7 +1,9 @@
 package com.example.zalandoapp.ui.TabbedFragments.TabBasket;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +17,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zalandoapp.R;
 import com.example.zalandoapp.entity.Offer;
+import com.example.zalandoapp.ui.TabbedFragments.TabFavourites.FavouritesAdapter;
 import com.example.zalandoapp.ui.TabbedFragments.offerDetails.OfferDetailsFragment;
 
 import java.util.ArrayList;
@@ -35,7 +39,6 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.MyViewHold
 
         return new BasketAdapter.MyViewHolder(view);
     }
-
     public BasketAdapter(Context ct,ArrayList<Offer> list){
         this.context = ct;
         this.basketList = (ArrayList<Offer>) list;
@@ -44,7 +47,7 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull BasketAdapter.MyViewHolder holder , int position){
-        Offer currentItem = basketList.get(position);
+        final Offer currentItem = basketList.get(position);
         holder.title.setText(currentItem.getTitle());
         holder.description.setText(currentItem.getDescription());
         holder.color.setText(currentItem.getColor());
@@ -52,6 +55,27 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.MyViewHold
         holder.myImage.setImageResource(currentItem.getImages());
         holder.amount.setText("Liczba: " +Integer.toString(currentItem.getAmount()));
         holder.size.setText("Rozmiar: "+currentItem.getSize());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new OfferDetailsFragment();
+                FragmentManager fragmentManager=((FragmentActivity)context).getSupportFragmentManager();
+
+                String myData;
+                myData = currentItem.getTitle()+"/"+currentItem.getDescription()+"/"+currentItem.getColor()+"/"+
+                        currentItem.getPrice()+"/"+currentItem.getOid();
+
+                Bundle data = new Bundle();
+                data.putString("args",myData);
+
+                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                fragment.setArguments(data);
+                fragmentTransaction.replace(R.id.container,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
     }
 
     @Override

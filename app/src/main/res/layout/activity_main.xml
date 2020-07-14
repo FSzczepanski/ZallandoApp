@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".utility.MainActivity">
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/mobile_navigation"
-        app:defaultNavHost="true"/>
-
-
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".utility.MainActivity">
     <View
+        android:id="@+id/vieww"
         android:layout_width="wrap_content"
         android:layout_height="3dp"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabBar"
         app:layout_constraintVertical_bias="0.0"
-        android:id="@+id/vieww"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="67dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabBar"
@@ -43,27 +48,27 @@
         app:layout_constraintVertical_bias="0.023">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabMainPageFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/navigation_mainPage"
             android:icon="@drawable/ic_stars_black" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabSearchFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/navigation_search"
             android:icon="@drawable/ic_search_black_24dp" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabFavouriteFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/navigation_favourite"
             android:icon="@drawable/ic_favorit" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabBasketFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/navigation_basket"
             android:icon="@drawable/ic_shopping_basket_black_24dp" />
 
     </com.google.android.material.tabs.TabLayout>
@@ -72,11 +77,12 @@
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/vieww" />
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

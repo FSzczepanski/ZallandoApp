@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -35,6 +36,8 @@ public class TabMainPageFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
+        navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
         //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.categoriesFragment, null));
     }
 

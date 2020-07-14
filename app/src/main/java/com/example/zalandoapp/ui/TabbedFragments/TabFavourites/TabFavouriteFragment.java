@@ -55,8 +55,8 @@ public class TabFavouriteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+       // navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
 
-        
     }
 
     @Override
@@ -81,8 +81,8 @@ public class TabFavouriteFragment extends Fragment {
 
     private void fillList(){
         favouritesList = new ArrayList();
-        favouritesList.add(new Offer("1","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport, "dark blue",1,"L"));
-        favouritesList.add(new Offer("2","Topwoman","Sweater hot cofre",99,R.drawable.sweater, "beige",1,"M"));
-        favouritesList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue",1,"M"));
+        favouritesList.add(new Offer("shirtsport","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport, "dark blue",1,"L"));
+        favouritesList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater, "beige",1,"M"));
+        favouritesList.add(new Offer("jeans1","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue",1,"M"));
     }
 }

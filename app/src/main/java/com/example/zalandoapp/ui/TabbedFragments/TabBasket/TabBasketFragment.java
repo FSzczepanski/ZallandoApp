@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -74,7 +75,7 @@ public class TabBasketFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
     }
 
     @Override
@@ -102,13 +103,12 @@ public class TabBasketFragment extends Fragment {
 
     private void fillList(){
         basketList = new ArrayList();
-        basketList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue", 1,"M"));
-        basketList.add(new Offer("2","Topwoman","Sweater hot cofre",99,R.drawable.sweater, "beige",1,"M"));
-        basketList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue", 1,"M"));
-        basketList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue", 1,"M"));
-        basketList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue", 1,"M"));
-        basketList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue", 1,"M"));
-        basketList.add(new Offer("3","Yourrun","Traditional jeans skretch",149,R.drawable.jeans,"blue", 1,"M"));
+        basketList.add(new Offer("jeans1","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue", 1,"M"));
+        basketList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater, "beige",1,"M"));
+        basketList.add(new Offer("jeans1","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue", 1,"M"));
+        basketList.add(new Offer("jeans1","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue", 1,"M"));
+        basketList.add(new Offer("jeans1","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue", 1,"M"));
+        basketList.add(new Offer("shirtsport","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport, "dark blue",1,"L"));
 
 
 

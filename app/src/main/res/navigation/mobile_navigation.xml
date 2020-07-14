@@ -3,19 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/tabMainPageFragment"
-    android:id="@+id/mobile_navigation">
+    android:id="@+id/mobile_navigation"
+    android:name="androidx.navigation.fragment.NavHostFragment">
 
 
     <fragment
         android:id="@+id/tabBasketFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.TabBasket.TabBasketFragment"
         android:label="TabBasketFragment"
-        tools:layout="@layout/tab_basket_fragment"/>
+        tools:layout="@layout/tab_basket_fragment">
+        <action
+            android:id="@+id/action_tabBasketFragment_to_offerDetailsFragment"
+            app:destination="@id/offerDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tabMainPageFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.TabMainPageFragment"
         android:label="TabMainPageFragment"
-        tools:layout="@layout/tab_main_page_fragment"/>
+        tools:layout="@layout/tab_main_page_fragment">
+        <action
+            android:id="@+id/action_tabMainPageFragment_to_offerDetailsFragment"
+            app:destination="@id/offerDetailsFragment" />
+        <action
+            android:id="@+id/action_tabMainPageFragment_to_tabSearchFragment2"
+            app:destination="@id/tabSearchFragment" />
+    </fragment>
     <fragment
         android:id="@+id/offerDetailsFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.offerDetails.OfferDetailsFragment"
@@ -30,5 +42,9 @@
         android:id="@+id/tabFavouriteFragment"
         android:name="com.example.zalandoapp.ui.TabbedFragments.TabFavourites.TabFavouriteFragment"
         android:label="TabFavouriteFragment"
-        tools:layout="@layout/tab_favourite_fragment"/>
+        tools:layout="@layout/tab_favourite_fragment">
+        <action
+            android:id="@+id/action_tabFavouriteFragment_to_offerDetailsFragment"
+            app:destination="@id/offerDetailsFragment" />
+    </fragment>
 </navigation>
