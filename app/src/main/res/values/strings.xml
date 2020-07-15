@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ZalandoApp</string>
     <string name="image">ZalandoApp</string>
+    <string name="description">Description</string>
+    <string name="color">color</string>
+    <string name="opis">Opis</string>
+    <string name="oceny">Oceny</string>
+    <string name="zobacz_wszystko">Zobacz wszystko</string>
 </resources>

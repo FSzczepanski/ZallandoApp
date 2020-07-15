@@ -28,7 +28,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="end|bottom"
                 android:layout_marginStart="330dp"
-                android:layout_marginBottom="620dp"
+                android:layout_marginBottom="510dp"
                 android:background="@android:color/darker_gray"
                 android:backgroundTint="@color/white"
                 android:src="@drawable/ic_favorite_black_24dp"
@@ -44,8 +44,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
+                android:layout_gravity="end|bottom"
                 android:layout_marginStart="330dp"
-                android:layout_marginBottom="500dp"
+                android:layout_marginBottom="400dp"
                 android:background="@android:color/darker_gray"
                 android:backgroundTint="@color/colorAccent"
                 android:src="@drawable/ic_shopping_basket2"
@@ -67,14 +68,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         app:srcCompat="@drawable/jeans2"
-                        tools:ignore="MissingConstraints"
-                        android:contentDescription="TODO" />
+                        tools:ignore="MissingConstraints" />
 
                     <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                        android:layout_marginTop="20dp">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/title"
@@ -102,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp"
-                    android:text="@string/description"
+                    android:text="Description"
                     android:textSize="19sp" />
 
                 <TextView
@@ -111,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp"
-                    android:text="@string/color"
+                    android:text="color"
                     android:textSize="19sp" />
 
                 <GridView
@@ -139,7 +138,7 @@
                     android:textAlignment="textStart"
                     android:textAllCaps="false"
                     android:background="@color/gray"
-                    android:text="@string/opis"
+                    android:text="    Opis"
                     android:focusable="true" />
 
                 <Button
@@ -149,13 +148,13 @@
                     android:background="@color/gray"
                     android:textAlignment="textStart"
                     android:textAllCaps="false"
-                    android:text="@string/oceny" />
+                    android:text="    Oceny" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -171,7 +170,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="42dp"
-                        android:text="@string/zobacz_wszystko"
+                        android:layout_marginBottom="16dp"
+                        android:text="Zobacz wszystko"
                         android:textColor="@color/colorAccent"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -179,10 +179,12 @@
 
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/recyclerViewPropostions"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"/>
+                        android:orientation="horizontal"
+                        tools:listitem="@layout/propositions_row"/>
 
             </LinearLayout>
 
