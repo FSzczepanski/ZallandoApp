@@ -171,9 +171,9 @@ public class OfferDetailsFragment extends Fragment {
         propositionsList = new ArrayList<>();
         propositionsList.add(new Offer("shirtsport","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport1, "dark blue",1,"L"));
         propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
-        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
-        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
         propositionsList.add(new Offer("jeans","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue",1,"M"));
+        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
+        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
     }
 
 }

@@ -36,23 +36,86 @@
             android:hint="  Czego szukasz?" />
 
 
-        <ImageView
-            android:id="@+id/imageLetni"
-            android:layout_width="400dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:padding="6dp"
-            android:src="@drawable/letniawyprzedaz" />
+            <ImageButton
+                android:id="@+id/imageLetni"
+                android:layout_width="400dp"
+                android:layout_height="275dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:contextClickable="true"
+                android:focusable="true"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/letniawyprzedaz" />
 
-        <ImageView
-            android:id="@+id/ImageKapelusze"
-            android:layout_width="400dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:padding="6dp"
-            android:src="@drawable/stylowekapelusze" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="Prosty wybór"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="Ponadczasowe letnie klasyki"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/ImageKapelusze"
+                android:layout_width="400dp"
+                android:layout_height="276dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:contextClickable="true"
+                android:focusable="true"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/stylowekapelusze" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="199dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:text="Najciekawsze oferty"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textFontWeight="900"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Promocje wybrane dla Ciebie!"
+                    android:layout_marginBottom="7dp"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPropostions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
             
         </LinearLayout>
     </ScrollView>
