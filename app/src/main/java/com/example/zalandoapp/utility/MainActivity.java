@@ -2,6 +2,7 @@ package com.example.zalandoapp.utility;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
@@ -9,7 +10,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
     private NavController navController;
     private View backButtonContainer;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
+
+
 
     }
 
@@ -106,5 +115,6 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
     private boolean isBackButtonVisible() {
         return this.backButtonContainer.getVisibility() == View.VISIBLE;
     }
+
 
 }

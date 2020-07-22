@@ -35,7 +35,7 @@
         tools:layout="@layout/offer_details_fragment" />
     <fragment
         android:id="@+id/tabSearchFragment"
-        android:name="com.example.zalandoapp.ui.TabbedFragments.TabSearchFragment"
+        android:name="com.example.zalandoapp.ui.TabbedFragments.TabSearch.TabSearchFragment"
         android:label="tab_search_fragment"
         tools:layout="@layout/tab_search_fragment" />
     <fragment

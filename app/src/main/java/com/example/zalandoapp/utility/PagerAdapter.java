@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.zalandoapp.ui.TabbedFragments.TabBasket.TabBasketFragment;
 import com.example.zalandoapp.ui.TabbedFragments.TabFavourites.TabFavouriteFragment;
 import com.example.zalandoapp.ui.TabbedFragments.TabMainPageFragment;
-import com.example.zalandoapp.ui.TabbedFragments.TabSearchFragment;
+import com.example.zalandoapp.ui.TabbedFragments.TabSearch.TabSearchFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
     private int numberOfTabs;

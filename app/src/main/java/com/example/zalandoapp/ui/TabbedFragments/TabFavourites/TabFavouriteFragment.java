@@ -81,8 +81,8 @@ public class TabFavouriteFragment extends Fragment {
 
     private void fillList(){
         favouritesList = new ArrayList();
-        favouritesList.add(new Offer("shirtsport","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport1, "dark blue",1,"L"));
-        favouritesList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
+        favouritesList.add(new Offer("koszula","Missk","Jeans shirt, high quality",29,R.drawable.koszula1, "blue",1,"L"));
+        favouritesList.add(new Offer("swtr","Chpo","Sunny sweater",199,R.drawable.swtr1, "yellow",2,"M"));
         favouritesList.add(new Offer("jeans","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue",1,"M"));
     }
 }
