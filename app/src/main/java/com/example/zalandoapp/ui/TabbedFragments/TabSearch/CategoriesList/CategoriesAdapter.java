@@ -70,7 +70,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.My
 
                 FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 fragment.setArguments(data);
-                fragmentTransaction.replace(R.id.containerCategories,fragment);
+                fragmentTransaction.replace(R.id.container,fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }

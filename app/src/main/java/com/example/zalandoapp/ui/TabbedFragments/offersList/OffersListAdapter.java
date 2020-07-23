@@ -55,7 +55,7 @@ public class OffersListAdapter extends RecyclerView.Adapter<OffersListAdapter.My
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              /*  Fragment fragment = new OfferDetailsFragment();
+               Fragment fragment = new OfferDetailsFragment();
                 FragmentManager fragmentManager=((FragmentActivity)context).getSupportFragmentManager();
 
                 String myData;
@@ -69,7 +69,7 @@ public class OffersListAdapter extends RecyclerView.Adapter<OffersListAdapter.My
                 fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.container,fragment);
                 fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();*/
+                fragmentTransaction.commit();
             }
         });
     }

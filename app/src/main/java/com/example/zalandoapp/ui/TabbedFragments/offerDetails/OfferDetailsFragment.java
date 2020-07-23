@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,8 +54,8 @@ public class OfferDetailsFragment extends Fragment {
     }
 
 
-
     private ArrayList<Integer> imageList;
+
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -68,19 +69,30 @@ public class OfferDetailsFragment extends Fragment {
             myItem = bundle.getString("args");
         }
 
+        ImageButton backButton = root.findViewById(R.id.backBut);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new TabBasketFragment();
+                FragmentManager fragmentManager = ((FragmentActivity) getActivity()).getSupportFragmentManager();
+
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentManager.popBackStack();
+            }
+        });
+
         setData(root, myItem);
 
         setPropositions();
         this.initList((RecyclerView) root.findViewById(R.id.recyclerViewPropostions));
 
         GridView gridView = root.findViewById(R.id.grid_view);
-        gridView.setAdapter(new ImageAdapter(imageList,getContext()));
-        buttonBasket= root.findViewById(R.id.buttonBask);
-        buttonFavourite= root.findViewById(R.id.buttonFav);
+        gridView.setAdapter(new ImageAdapter(imageList, getContext()));
+        buttonBasket = root.findViewById(R.id.buttonBask);
+        buttonFavourite = root.findViewById(R.id.buttonFav);
 
         return root;
     }
-
 
 
     @Override
@@ -90,16 +102,13 @@ public class OfferDetailsFragment extends Fragment {
         navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
 
 
-
-
-
-        buttonBasket.setOnClickListener(new View.OnClickListener(){
+        buttonBasket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment fragment = new TabBasketFragment();
-                FragmentManager fragmentManager=((FragmentActivity) getActivity()).getSupportFragmentManager();
+                FragmentManager fragmentManager = ((FragmentActivity) getActivity()).getSupportFragmentManager();
 
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentManager.popBackStack();
 
             }
@@ -129,18 +138,16 @@ public class OfferDetailsFragment extends Fragment {
         title.setText(data[0]);
         description.setText(data[1]);
         color.setText(data[2]);
-        price.setText(data[3]+ " zł");
+        price.setText(data[3] + " zł");
 
         String mainimage = data[4];
         imageView.setImageResource(view
-                .getResources().getIdentifier(mainimage+1,"drawable",getContext().getOpPackageName()));
+                .getResources().getIdentifier(mainimage + 1, "drawable", getContext().getOpPackageName()));
 
 
-            imageList = new ArrayList<>(Arrays.asList( view.getResources().getIdentifier(mainimage+1,"drawable",getContext().getOpPackageName())
-                    , view.getResources().getIdentifier(mainimage+2,"drawable",getContext().getOpPackageName())
-                    , view.getResources().getIdentifier(mainimage+3,"drawable",getContext().getOpPackageName())));
-
-
+        imageList = new ArrayList<>(Arrays.asList(view.getResources().getIdentifier(mainimage + 1, "drawable", getContext().getOpPackageName())
+                , view.getResources().getIdentifier(mainimage + 2, "drawable", getContext().getOpPackageName())
+                , view.getResources().getIdentifier(mainimage + 3, "drawable", getContext().getOpPackageName())));
 
 
     }
@@ -154,7 +161,7 @@ public class OfferDetailsFragment extends Fragment {
 
     private void initList(RecyclerView view) {
         this.propostionsRecyclerView = view;
-        propostionsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
+        propostionsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         //manager.setOrientation(RecyclerView.VERTICAL);
 
         //this.list.setHasFixedSize(false);
@@ -169,11 +176,11 @@ public class OfferDetailsFragment extends Fragment {
 
 
         propositionsList = new ArrayList<>();
-        propositionsList.add(new Offer("shirtsport","Adidas","Unisex T-shirt CREW NECK",49,R.drawable.shirtsport1, "dark blue",1,"L"));
-        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
-        propositionsList.add(new Offer("jeans","Yourrun","Traditional jeans skretch",149,R.drawable.jeans1,"blue",1,"M"));
-        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
-        propositionsList.add(new Offer("sweater","Topwoman","Sweater hot cofre",99,R.drawable.sweater1, "beige",1,"M"));
+        propositionsList.add(new Offer("shirtsport", "Adidas", "Unisex T-shirt CREW NECK", 49, R.drawable.shirtsport1, "dark blue", 1, "L"));
+        propositionsList.add(new Offer("sweater", "Topwoman", "Sweater hot cofre", 99, R.drawable.sweater1, "beige", 1, "M"));
+        propositionsList.add(new Offer("jeans", "Yourrun", "Traditional jeans skretch", 149, R.drawable.jeans1, "blue", 1, "M"));
+        propositionsList.add(new Offer("sweater", "Topwoman", "Sweater hot cofre", 99, R.drawable.sweater1, "beige", 1, "M"));
+        propositionsList.add(new Offer("sweater", "Topwoman", "Sweater hot cofre", 99, R.drawable.sweater1, "beige", 1, "M"));
     }
 
 }
